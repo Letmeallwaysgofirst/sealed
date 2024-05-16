@@ -8,6 +8,7 @@ function onSignIn(googleUser) {
     showRecommendations();
 }
 
+// Funktion zum Anzeigen von Empfehlungen
 async function showRecommendations() {
     // Hier kannst du die Empfehlungen basierend auf dem angemeldeten Benutzer anzeigen
     // Zum Beispiel kannst du eine API-Anfrage senden, um die Empfehlungen abzurufen
@@ -18,7 +19,8 @@ async function showRecommendations() {
     document.getElementById('recommendations').classList.remove('hidden');
     document.querySelector('.login-form').style.display = 'none';
 }
-// Schritt 1: Datenabruf
+
+// Schritt 1: Funktion für den Datenabruf der Winrate-Daten
 async function fetchWinrateData() {
     try {
         const response = await axios.get('https://gudecks.com/meta/card-rankings?gameMode=7&timeFrame=15');
