@@ -18,3 +18,24 @@ async function showRecommendations() {
     document.getElementById('recommendations').classList.remove('hidden');
     document.querySelector('.login-form').style.display = 'none';
 }
+// Schritt 1: Datenabruf
+async function fetchWinrateData() {
+    try {
+        const response = await axios.get('https://gudecks.com/meta/card-rankings?gameMode=7&timeFrame=15');
+        return response.data; // Gibt die abgerufenen Daten zurück
+    } catch (error) {
+        console.error('Error fetching winrate data:', error);
+        return null;
+    }
+}
+
+// Beispiel für die Verwendung des Datenabrufs
+async function showWinrateData() {
+    const winrateData = await fetchWinrateData();
+    if (winrateData) {
+        console.log('Winrate data:', winrateData);
+        // Hier kannst du die Datenverarbeitung und -anzeige durchführen
+    } else {
+        console.log('Failed to fetch winrate data');
+    }
+}
