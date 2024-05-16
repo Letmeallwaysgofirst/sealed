@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gods Unchained Sealed Deck Helper</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Sign-In JavaScript-Bibliothek einbinden -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="DEINE_CLIENT_ID.apps.googleusercontent.com">
 </head>
 <body>
     <div class="container">
         <h1>Gods Unchained Sealed Deck Helper</h1>
         <div class="login-form">
-            <h2>Login</h2>
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-            <button onclick="login()">Login</button>
+            <h2>Google Login</h2>
+            <!-- Google Login-Button -->
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <p id="login-error" class="error-message"></p>
         </div>
         <div id="recommendations" class="hidden">
